@@ -1,0 +1,42 @@
+[
+  {
+    "_id": { "$oid": "65eb3444844b2b3afc84b267" },
+    "userId": "65e72e90d85ea5482d545c75",
+    "name": "Corinthia Lisboa",
+    "city": "Lisbon",
+    "country": "Portugal",
+    "description": "This is description",
+    "type": "Luxury",
+    "adultCount": { "$numberInt": "2" },
+    "childCount": { "$numberInt": "5" },
+    "facilities": ["Parking", "Fitness Center"],
+    "pricePerNight": { "$numberInt": "150" },
+    "starRating": { "$numberInt": "5" },
+    "imageUrls": [
+      "http://res.cloudinary.com/dnuxtiego/image/upload/v1709913154/ybegqjtmwvxandub0vjm.jpg"
+    ],
+    "lastUpdated": { "$date": { "$numberLong": "1709913156385" } },
+    "__v": { "$numberInt": "0" }
+  },
+  {
+    "_id": { "$oid": "65ec3e5460032d2253e97b53" },
+    "userId": "65e72e90d85ea5482d545c75",
+    "name": "Corinthia Lisboa",
+    "city": "Li",
+    "country": "Portugal",
+    "description": "This is just description of the new hotel",
+    "type": "Family",
+    "adultCount": { "$numberInt": "2" },
+    "childCount": { "$numberInt": "4" },
+    "facilities": ["Parking", "Spa", "Fitness Center"],
+    "pricePerNight": { "$numberInt": "30" },
+    "starRating": { "$numberInt": "5" },
+    "imageUrls": [
+      "http://res.cloudinary.com/dnuxtiego/image/upload/v1709981268/plkrftkeymwivk1t5eki.jpg",
+      "http://res.cloudinary.com/dnuxtiego/image/upload/v1709981267/xyesrqjumyuwob288dcg.jpg",
+      "http://res.cloudinary.com/dnuxtiego/image/upload/v1709981268/uhulqdhilbrl7kqwuivt.jpg"
+    ],
+    "lastUpdated": { "$date": { "$numberLong": "1709981268559" } },
+    "__v": { "$numberInt": "0" }
+  }
+]

@@ -52,3 +52,24 @@ test('Should allow the user to add new hotel', async ({ page }) => {
   await page.getByRole('button', { name: 'Save' }).click();
   await expect(page.getByText('Hotel saved successfully.')).toBeVisible();
 });
+
+/**
+ * Test the display of Hotels
+ */
+test('Should display the hotels', async ({ page }) => {
+  // visit my hotels page
+  await page.goto(`${UI_URL}my-hotels`);
+
+  await expect(page.getByText('Test Hotel')).toBeVisible();
+  await expect(
+    page.getByText('Test Description about the new hotel...')
+  ).toBeVisible();
+  await expect(page.getByText('Test City, Test Country')).toBeVisible();
+  await expect(page.getByText('Luxury')).toBeVisible();
+  await expect(page.getByText('$100 per night')).toBeVisible();
+  await expect(page.getByText('2 adults, 3 children')).toBeVisible();
+  await expect(page.getByText('3 Star rating')).toBeVisible();
+
+  await expect(page.getByRole('link', { name: 'View Details' })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Add Hotel' })).toBeVisible();
+});
