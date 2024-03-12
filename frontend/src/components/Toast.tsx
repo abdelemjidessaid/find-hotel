@@ -1,9 +1,9 @@
-import { useEffect } from "react";
+import { useEffect } from 'react';
 
 // typing the toast properties
 type ToastProps = {
   message: string;
-  type: "SUCCESS" | "ERROR";
+  type: 'SUCCESS' | 'ERROR';
   onClose: () => void;
 };
 
@@ -22,9 +22,9 @@ const Toast = ({ message, type, onClose }: ToastProps) => {
 
   // create the style of toast from type
   const styles =
-    type === "SUCCESS"
-      ? "fixed top-4 right-4 z-50 py-3 px-6 rounded-md bg-green-600 border border-white text-white max-w-md transition-all ease-in-out duration-500"
-      : "fixed top-4 right-4 z-50 py-3 px-6 rounded-md bg-red-600 border border-white text-white max-w-md transition-all ease-in-out duration-500";
+    type === 'SUCCESS'
+      ? 'fixed top-4 right-[50%] translate-x-[50%] z-50 py-3 px-6 rounded-md bg-green-600 border border-white text-white max-w-md transition-all ease-in-out duration-500'
+      : 'fixed top-4 right-[50%] translate-x-[50%] z-50 py-3 px-6 rounded-md bg-red-600 border border-white text-white max-w-md transition-all ease-in-out duration-500';
 
   return (
     <div className={styles}>
