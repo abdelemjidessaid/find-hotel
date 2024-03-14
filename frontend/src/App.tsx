@@ -3,16 +3,17 @@ import {
   Routes,
   Route,
   Navigate,
-} from 'react-router-dom';
-import Layout from './layouts/Layout';
-import Register from './pages/Register';
-import SignIn from './pages/SignIn';
-import AddHotel from './pages/AddHotel';
-import { useAppContext } from './contexts/AppContext';
-import MyHotels from './pages/MyHotels';
-import EditHotel from './pages/EditHotel';
-import Search from './pages/Search';
-import Detail from './pages/Detail';
+} from "react-router-dom";
+import Layout from "./layouts/Layout";
+import Register from "./pages/Register";
+import SignIn from "./pages/SignIn";
+import AddHotel from "./pages/AddHotel";
+import { useAppContext } from "./contexts/AppContext";
+import MyHotels from "./pages/MyHotels";
+import EditHotel from "./pages/EditHotel";
+import Search from "./pages/Search";
+import Detail from "./pages/Detail";
+import Booking from "./pages/Booking";
 
 const App = () => {
   const { isLoggedIn } = useAppContext();
@@ -68,7 +69,16 @@ const App = () => {
         {/* Add & Fetch Hotel Form pages */}
         {isLoggedIn && (
           <>
-            {/* post Hotels */}
+            {/* page booking Hotels */}
+            <Route
+              path="/hotel/:hotelId/booking"
+              element={
+                <Layout>
+                  <Booking />
+                </Layout>
+              }
+            ></Route>
+            {/* page of posting Hotels */}
             <Route
               path="/add-hotel"
               element={
@@ -77,7 +87,7 @@ const App = () => {
                 </Layout>
               }
             ></Route>
-            {/* fetch Hotels */}
+            {/* page of Hotels */}
             <Route
               path="/my-hotels"
               element={
@@ -86,7 +96,7 @@ const App = () => {
                 </Layout>
               }
             ></Route>
-            {/* edit Hotel */}
+            {/* page of editing Hotel */}
             <Route
               path="/edit-hotel/:hotelId"
               element={
