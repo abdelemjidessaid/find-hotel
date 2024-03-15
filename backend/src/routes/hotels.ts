@@ -175,7 +175,12 @@ router.post(
         return res.status(400).json({ message: "Hotel not found!" });
       }
       // if everything passed OK. save the booking
-      await hotel.save();
+      try {
+        await hotel.save();
+      } catch (error) {
+        console.log(error);
+        res.status(500).json({ message: "Error booking, data not completed!" });
+      }
       res.status(200).send();
     } catch (error) {
       console.log(error);

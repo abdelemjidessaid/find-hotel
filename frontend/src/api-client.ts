@@ -267,6 +267,10 @@ export const createPaymentIntent = async (
   return response.json();
 };
 
+/**
+ * POST Function that saves the user's bookings.
+ * @param formData booking data that comes from the user form.
+ */
 export const createRoomBooking = async (formData: BookingFormData) => {
   const response = await fetch(
     `${API_BASE_URL}/api/hotels/${formData.hotelId}/bookings`,
@@ -283,4 +287,20 @@ export const createRoomBooking = async (formData: BookingFormData) => {
   if (!response.ok) {
     throw new Error("Error booking room!");
   }
+};
+
+/**
+ * Function that fetches the user's bookings.
+ * @returns the bookigs response.
+ */
+export const fetchMyBookings = async (): Promise<HotelType[]> => {
+  const response = await fetch(`${API_BASE_URL}/api/my-bookings`, {
+    credentials: "include",
+  });
+
+  if (!response.ok) {
+    throw new Error("Unable to fetch bookings!");
+  }
+
+  return response.json();
 };

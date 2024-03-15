@@ -51,6 +51,9 @@ test("Should book a hotel for 3 days", async ({ page }) => {
   await page.getByRole("button", { name: "Search" }).click();
 
   await page.getByText("View More").first().click();
+
+  await page.locator('[name="childCount"]').fill("3");
+  await page.locator('[name="adultCount"]').fill("2");
   await page.getByRole("button", { name: "Book Now" }).click();
 
   await expect(page.getByText("Total Cost: $300.00")).toBeVisible();
@@ -66,4 +69,8 @@ test("Should book a hotel for 3 days", async ({ page }) => {
   await page.getByRole("button", { name: "Confirm Booking" }).click();
 
   await expect(page.getByText("Booking Saved 👏")).toBeVisible();
+
+  // Check if the room booked and found in My Bookings page
+  await page.getByRole("link", { name: "My Bookings" }).click();
+  await expect(page.getByText("Test Hotel")).toBeVisible({ timeout: 30000 });
 });
