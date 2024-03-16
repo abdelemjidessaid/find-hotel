@@ -1,9 +1,9 @@
-import { FormEvent, useState } from 'react';
-import { useSearchContext } from '../contexts/SearchContext';
-import { MdTravelExplore } from 'react-icons/md';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
-import { useNavigate } from 'react-router-dom';
+import { FormEvent, useState } from "react";
+import { useSearchContext } from "../contexts/SearchContext";
+import { MdTravelExplore } from "react-icons/md";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { useNavigate } from "react-router-dom";
 
 const SearchBar = () => {
   const navigate = useNavigate();
@@ -24,7 +24,7 @@ const SearchBar = () => {
       adultCount,
       childCount
     );
-    navigate('/search');
+    navigate("/search");
   };
 
   const minDate = new Date();
@@ -34,7 +34,7 @@ const SearchBar = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="-mt-8 p-2 bg-teal-300 rounded-md shadow-md grid grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 items-center gap-4"
+      className="-mt-8 p-2 bg-teal-300/30 backdrop-filter backdrop-blur-lg rounded-md shadow-md grid grid-cols-2 lg:grid-cols-4 2xl:grid-cols-5 items-center gap-4"
     >
       {/* Destination Input */}
       <div className="flex flex-row items-center flex-1 rounded-md bg-white p-2 gap-2">
@@ -90,7 +90,7 @@ const SearchBar = () => {
         />
       </div>
       {/* Date Picker of Check Out */}
-      <div>
+      <div className="z-10">
         <DatePicker
           selected={checkOut}
           onChange={(date) => setCheckOut(date as Date)}

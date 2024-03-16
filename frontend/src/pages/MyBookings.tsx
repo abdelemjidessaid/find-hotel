@@ -18,7 +18,7 @@ const MyBookings = () => {
   return (
     <div className="space-y-5">
       {/* Bookings Title */}
-      <h1 className="text-lg font-semibold">My Bookings</h1>
+      <h1 className="text-lg text-slate-500 font-semibold">My Bookings</h1>
       {hotels.map((hotel) => (
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1fr_3fr] border border-slate-300 rounded-md p-8">
           {/* Hotel image */}
