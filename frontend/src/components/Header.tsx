@@ -1,6 +1,7 @@
-import { Link } from 'react-router-dom';
-import { useAppContext } from '../contexts/AppContext';
-import SignOutButton from './SignOutButton';
+import { Link } from "react-router-dom";
+import { useAppContext } from "../contexts/AppContext";
+import SignOutButton from "./SignOutButton";
+import "../../public/icon.png";
 
 const Header = () => {
   const { isLoggedIn } = useAppContext();
@@ -9,7 +10,10 @@ const Header = () => {
       <div className="container mx-auto flex justify-between">
         {/* header logo */}
         <span className="text-2xl text-white font-bold tracking-tight">
-          <Link to="/">Find Hotels</Link>
+          <Link to="/" className="flex items-center gap-3 ">
+            <img src="icon.png" className="w-10" />
+            Find Hotels
+          </Link>
         </span>
         {/* sign-in button */}
         <span className="flex space-x-2">
@@ -34,7 +38,7 @@ const Header = () => {
             // if not logged in show the sign in button
             <Link
               to="/sign-in"
-              className="flex items-center bg-white rounded-md text-blue-600 px-3 font-bold hover:bg-gray-200 transition-all ease-in-out duration-200"
+              className="flex items-center bg-transparent border-2 border-white rounded-md text-white px-3 font-bold hover:bg-white hover:text-teal-600 transition-all ease-in-out duration-200"
             >
               Sign In
             </Link>
