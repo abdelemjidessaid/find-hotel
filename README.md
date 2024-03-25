@@ -118,5 +118,4 @@ The project is a MERN-Stack website
 
 ## Authors
 
-- Abdelemjid Essaid https://github.com/abdelemjidessaid
-- Khaoula Berrah https://github.com/khaoula-berrah
+- [Abdelemjid Essaid](https://github.com/abdelemjidessaid)
