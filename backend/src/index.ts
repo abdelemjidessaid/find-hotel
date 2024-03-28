@@ -20,9 +20,7 @@ cloudinary.config({
 
 // connect the app with mongodb
 mongoose.connect(process.env.MONGODB_CONNECTION_STRING as string).then(() => {
-  console.log(
-    `Connected to the database: ${process.env.MONGODB_CONNECTION_STRING}`
-  );
+  console.log(`[+] connected to the MongoDB`);
 });
 
 // make instance of express
@@ -51,5 +49,5 @@ app.get("*", (req: Request, res: Response) => {
 });
 
 app.listen(7000, () => {
-  console.log("server running on localhost:7000");
+  console.log("[+] server running on localhost:7000");
 });
